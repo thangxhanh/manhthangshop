@@ -1,0 +1,51 @@
+<div class="product">
+    <div class="product_items">
+        <a href="/" class="product_item">Manh_Thang-shop</a>
+        <span>></span>
+        <a href="/{{la.id}}" class="product_item">{{la.name}}</a>
+        <span>></span>
+        <span class="product_item">{{pr.name}}</span>
+    </div>
+
+    <div class="product_container">
+        <img src="{{pr.image}}" alt="" class="product_img">
+
+        <div class="product_info">
+            <span class="product_name">{{pr.name}}</span>
+
+            <div class="product_price">
+                <span class="product_price-old">{{pr.price}}đ</span>
+                <span class="product_price-current">{{pr.price}}đ</span>
+                <span class="product_sale">{{pr.sale}}% GIẢM</span>
+            </div>
+
+            <div action="" class="product_quantity">
+                <span>Số lượng</span>
+
+                <div class="product_quantity-from">
+                    <button class="product_button">
+                        <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="product_icon">
+                            <polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5"></polygon>
+                        </svg>
+                    </button>
+
+                    <input class="product_button product_quantity-input" type="text" role="spinbutton" aria-valuenow="1" value="1">
+
+                    <button class="product_button">
+                        <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="product_icon">
+                            <polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5"></polygon>
+                        </svg>
+                    </button>
+                </div>
+
+                <button class="product_add-cart btn btn--primary">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product_description">
+        <span class="product_description-title">Mô tả sản phẩm</span>
+
+        <span class="product_description-content">{{pr.description}}</span>
+    </div>
+</div>

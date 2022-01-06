@@ -1,0 +1,128 @@
+<div class="modal"> 
+            <div class="modal__overlay">
+
+            </div>
+
+            <div class="modal__body"> -->
+                <!-- Regiter form -->
+                <div class="auth-form">
+                    <form class="auth-form__container" id="form-1" method="POST">
+                        <div class="auth-form__header">
+                            <h3 class="auth-form__heading">Đăng ký</h3>
+                            <span class="auth-form__btn">Đăng nhập</span>
+                        </div>
+
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <label for="email" class="form-label">Email</label>
+                                <input id="email" type="text" name="email" class="auth-form__input" placeholder="Nhập email của bạn">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="pass" class="form-label">Mật khẩu</label>
+                                <input id="pass" type="password" name="pass" class="auth-form__input" placeholder="Nhập mật khẩu của bạn">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="checkPass" class="form-label">Nhập lại mật khẩu</label>
+                                <input id="checkPass" type="password" name="checkPass" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                                <span class="form-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__aside">
+                            <p class="auth-form__policy-text">
+                                Bằng việc đăng kí bạn đã đồng ý với Chúng tôi về
+                                <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                                <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
+                            </p>
+                        </div>
+
+                        <div class="auth-form__controls">
+                            <button class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
+                            <button type="submit" class="btn btn--primary">ĐĂNG KÝ</button>
+                        </div>
+                    </form>
+
+                    <div class="auth-form__socials">
+                        <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                            <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                            <span class="auth-form__socials-title">Kết nối với Facebook</span>
+                        </a>
+
+                        <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                            <img src="/img/google_icon.png" alt="" class="auth-form__socials-icon-google">
+                            <span class="auth-form__socials-title">Kết nối với Google</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Login form -->
+                <div class="auth-form">
+                    <form class="auth-form__container" id="form-2" method="POST">
+                        <div class="auth-form__header">
+                            <h3 class="auth-form__heading">Đăng nhập</h3>
+                            <span class="auth-form__btn">Đăng ký</span>
+                        </div>
+
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <label for="loginEmail" class="form-label">Email</label>
+                                <input id="loginEmail" type="text" name="loginEmail" class="auth-form__input" placeholder="Nhập email của bạn">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="loginPass" class="form-label">Mật khẩu</label>
+                                <input id="loginPass" type="password" name="loginPass" class="auth-form__input" placeholder="Nhập mật khẩu của bạn">
+                                <span class="form-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__aside">
+                            <div class="auth-form__help">
+                                <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                                <span class="auth-form__help-sparate"></span>
+                                <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__controls">
+                            <button class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
+                            <button type="submit" class="btn btn--primary">ĐĂNG NHẬP</button>
+                        </div>
+                    </form>
+
+                    <div class="auth-form__socials">
+                        <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                            <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                            <span class="auth-form__socials-title">Kết nối với Facebook</span>
+                        </a>
+
+                        <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                            <img src="/img/google_icon.png" alt="" class="auth-form__socials-icon-google">
+                            <span class="auth-form__socials-title">Kết nối với Google</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/validator.js"></script>
+        <script>
+            Validator({
+                form: '#form-1',
+                errorSelector: '.form-message',
+                rules: [
+                    Validator.isEmail('#email'),
+                    Validator.isRequired('#pass'),
+                    Validator.isRequired('#checkPass'),
+                ]
+            })
+            Validator({
+                form: '#form-2',
+                errorSelector: '.form-message',
+                rules: [
+                    Validator.isEmail('#loginEmail'),
+                    Validator.isRequired('#loginPass'),
+                ]
+            })
+        </script>
