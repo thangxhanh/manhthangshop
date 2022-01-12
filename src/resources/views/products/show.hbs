@@ -17,6 +17,19 @@
                 <span class="product_price-old">{{pr.price}}đ</span>
                 <span class="product_price-current">{{pr.price}}đ</span>
                 <span class="product_sale">{{pr.sale}}% GIẢM</span>
+
+                <script>
+                    var product = document.querySelector('.product_price');
+                    var sale = product.querySelector('.product_sale');
+                    if(sale.innerText === '0% GIẢM') {
+                        product.querySelector('.product_price-old').style.display = 'none';
+                        sale.style.display = 'none';
+                    }
+                    else {
+                        var price = product.querySelector('.product_price-current');
+                        price.innerText = ( Number.parseInt(price.innerText) / 100 * (100 - Number.parseInt(sale.innerText))).toFixed().toString() + "đ";
+                    }
+                </script>
             </div>
 
             <div action="" class="product_quantity">
