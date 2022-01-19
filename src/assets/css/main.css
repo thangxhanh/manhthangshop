@@ -135,8 +135,10 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-.header__navbar-item--strong {
+.header__navbar-item--strong a{
     font-weight: 450;
+    color: var(--white-color);
+    text-decoration: none;
 }
 
 .header__navbar-item--separate {
@@ -346,6 +348,7 @@
     background-color: var(--white-color);
     border-radius: 5px;
     overflow: hidden;
+    margin: auto;
 }
 
 .auth-form__container {

@@ -62,3 +62,15 @@
         <span class="product_description-content">{{pr.description}}</span>
     </div>
 </div>
+
+{{#if checkLogin}}
+    <script>
+        var a = document.querySelectorAll('.header__navbar-item--strong');
+        a[0].style.display = 'none';
+        a[1].style.display = 'none';
+    </script>
+{{else}}
+    <script>
+        document.querySelector('.header__navbar-user').style.display = 'none';
+    </script>
+{{/if}}

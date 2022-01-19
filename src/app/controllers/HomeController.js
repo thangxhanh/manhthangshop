@@ -31,6 +31,7 @@ function pagination(current, pages) {
 class HomeController {
     //[GET] /
     index(req, res, next) {
+        console.log(req.session.daDangNhap);
         let perPage = 25; // số lượng sản phẩm xuất hiện trên 1 page
         let page = Number.parseInt(req.query.page) || 1;
 
@@ -47,7 +48,8 @@ class HomeController {
                     checkFirst: page-1,
                     items: pagination(page, Math.ceil(count / perPage)),
                     checkLast: Math.ceil(count / perPage) - page,
-                    cLast: page+1
+                    cLast: page+1,
+                    checkLogin: req.session.daDangNhap
             }))
             })
         }
@@ -55,11 +57,10 @@ class HomeController {
         .catch (error => next(error));
     }
 
-    //[GET] /:slug
     filter(req, res, next) {
         let perPage = 25; // số lượng sản phẩm xuất hiện trên 1 page
         let page = req.query.page || 1;
-
+        
         product.find({ label: req.params.slug }).lean()
         .skip((perPage * page) - perPage) // Trong page đầu tiên sẽ bỏ qua giá trị là 0
         .limit(perPage)
@@ -73,13 +74,13 @@ class HomeController {
                     checkFirst: page-1,
                     items: pagination(page, Math.ceil(count / perPage)),
                     checkLast: Math.ceil(count / perPage) - page,
-                    cLast: page+1
+                    cLast: page+1,
+                    checkLogin: req.session.daDangNhap
             }))
             })
         }
         )
     }
-        
 }
 
 module.exports = new HomeController;

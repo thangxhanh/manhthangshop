@@ -87,7 +87,7 @@ html {
     right: 0;
     bottom: 0;
     left: 0;
-    display: none;
+    display: block;
     animation: fadeIn linear 0.1s;
 }
 
@@ -95,7 +95,7 @@ html {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color:rgba(0, 0, 0, 0.4);
+    background-color:rgb(238, 232, 232);
 }
 
 .modal__body {

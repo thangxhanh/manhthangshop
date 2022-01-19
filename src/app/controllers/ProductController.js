@@ -8,7 +8,11 @@ class ProductController {
         product.findOne({ _id: req.params.id }).lean()
             .then (pr => {
                 label.findOne({ id: pr.label }).lean()
-                .then (la => res.render('products/show', {pr, la}))
+                .then (la => res.render('products/show', {
+                    pr, 
+                    la,
+                    checkLogin: req.session.daDangNhap
+                }))
                 .catch (error => next(error));
             })
             .catch (next);
